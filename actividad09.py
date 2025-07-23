@@ -32,5 +32,8 @@ for i in range (numeroClientes):
             "totalDestinos" : numDestinos
         }
 print("=== LISTADO DE CLIENTES Y DESTINOS VISITADOS ===")
-
+for codigo, cliente in clientes.items():
+    print(f"\tCliente: {codigo}")
+    print(f"\tNombre: {cliente['nombre']}")
+    print(f"Destino")
 print(f"El numero total de viajes ingresados son: {sumaDestinos(clientes, 1)}")
