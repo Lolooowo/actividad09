@@ -13,6 +13,29 @@ def sumaDestinos(clientes, codigo):
         for clave, valor in cliente["codigoDestino"].items():
             numeroDestinos = cliente["codigoDestino"].get(clave, numeroDestinos)
         return  numeroDestinos + sumaDestinos(clientes, codigo + 1)
+def mayorDestinos(clientes, codigo):
+    if codigo == len(clientes):
+        cliente = clientes[codigo]
+        mayor = 0
+        numeroDestinos = int
+        for clave, valor in cliente["codigoDestino"].items():
+            numeroDestinos = cliente["codigoDestino"]["numeroDestino"].get(clave, numeroDestinos)
+            if  numeroDestinos > mayor:
+                mayor = numeroDestinos
+        return mayor
+    else:
+        cliente = clientes[codigo]
+        mayor = 0
+        numeroDestinos = int
+        for clave, valor in cliente["codigoDestino"].items():
+            numeroDestinos = cliente["codigoDestino"]["numeroDestino"].get(clave, numeroDestinos)            if numeroDeDestinos > mayor:
+                mayor = numeroDestinos
+        mayores = mayorDestinos(clientes, codigo + 1)
+        if mayor > mayores:
+            mayor = mayores
+
+        return mayor
+
 
 
 numeroClientes = int(input("¿Cuantos clientes desea ingresar?: "))
@@ -37,3 +60,4 @@ for codigo, cliente in clientes.items():
     print(f"\tNombre: {cliente['nombre']}")
     print(f"Destino")
 print(f"El numero total de viajes ingresados son: {sumaDestinos(clientes, 1)}")
+print(f"El que tiene mayor destinos es: {mayorDestinos(clientes, 1)}")
